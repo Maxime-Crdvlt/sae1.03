@@ -1,11 +1,27 @@
+@media (max-width: 992px) {
+    aside.nav {
+        display: none; /* Cache le sommaire lorsque la largeur est inférieure à 992px */
+    }
+}
+
 body {
     background-color: #F9F7F0;
 }
-
+main {
+    padding: 0.2em;
+}
 /* Barre de Navigation */
-nav.navbar, aside {
+nav.navbar, aside.nav {
     background-color: #178CA4;
     color: #F9F7F0;
+}
+aside.nav {
+    margin: 0.2em;
+    align-self: start;
+    margin: 0.2em;
+    align-self: start;
+    position: sticky;
+    top: 3.80rem;
 }
 nav.navbar {
     border-bottom-left-radius: 1.5em;
