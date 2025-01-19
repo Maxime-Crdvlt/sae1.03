@@ -59,8 +59,63 @@
     </aside>
     <main class="col px-0">
         <h1>Installation d'un poste pour le développement - Mise en place d'un service web</h1>
+        <h2>Installation et configuration d’Apache</h2>
+        <h3>Pourquoi Apache ?</h3>
+        <p>
+            Nous avons fait quelques recherches et voici pourquoi il serait plus judicieux selon nous d’utiliser Apache2 que Nginx par exemple :
+        </p>
+        <ul>
+            <li>plus simple selon plusieurs utilisateurs
+            <li>plus vieux
+                <ul>
+                    <li>beaucoup de contenus sur ce service
+                    <li>plus d’expériences
+                </ul>
+            <li>plus grosse communauté
+                <ul>
+                    <li>plus d’informations et de contenus sur ce service
+                    <li>plus d’aide sur différents forums par exemple
+                </ul>
+        </ul>
 
-</main>
+        <h3>Installation d'Apache</h3>
+        <p>
+            Nous avons tout d’abord installé Apache sur notre machine virtuelle via les commandes suivantes :
+            <br><code>sudo apt install apache2 <br>sudo service apache2 start</code>
+            <br>Nous avons ensuite installé un service SSH afin que nous puissions manipuler le service web sur notre machine physique via la commande suivante :
+            <br><code>sudo apt install openssh-server</code>
+            <br>Nous avons ensuite essayé de nous “connecter” via l’invite de commande de notre machine physique à notre machine virtuelle via la commande suivante :
+            <br><code>ssh admin_gr106_trinomeg1@[IP]</code>
+            <br>Nous avons enfin essayé d’afficher la page internet d’accueil d’Apache afin de savoir si le service web avait bien été installé sur notre machine virtuelle en tapant l’IP de notre machine virtuelle dans un navigateur internet. On peut avoir l'IP de notre machine via cette commande :
+            <br><code>ip -c addr</code>
+            <br>Afin que toutes ces étapes fonctionnent, nous avons dû configurer le réseau de notre machine virtuelle sur : <code>“Mode d’accès réseaux : Accès par pont”</code>
+        </p>
+        <h3>Configuration d'Apache</h3>
+        <p>
+            Tout d’abord, nous allons créer un dossier qui contiendra tous les fichiers du site : compterendu.fr dans lequel nous créons dès à présent un fichier en .html de “test” qui affiche uniquement une phrase.
+            <br>Nous avons ensuite créé un lien symbolique avec le dossier créé plus tôt via la commande suivante dans le dossier de la machine virtuelle /srv :
+            <br><code>sudo ln -s /home/admin_gr106_trinomeg1/compterendu.fr compterendu.fr</code>
+            <br>On ajoute aussi des permissions aux “other” de lire et d’exécuter le dossier /home/admin_gr106_trinomeg1 afin qu’Apache2 puisse accéder à ce dossier et ainsi pouvoir afficher notre site :
+            <br><code>chmod o+r admin_gr106_trinomeg1 <br>chmod o+x admin_gr106_trinomeg1</code>
+            <br>Nous avons ensuite commencé la véritable configuration d’Apache2 pour qu’il puisse afficher donc le dossier compterendu.fr comme site web.
+            <br>Nous avons d’abord commencé par modifier le fichier apache2.conf :
+            <br><code>sudo nano /etc/apache2/apache2.conf</code>
+            <br>On ajoute la directive suivante afin que l’utilisateur Apache2 puisse accéder au dossier /srv/ :
+            <code><br>&lt;Directory /srv/&gt; <br>Options FollowSymLink <br>AllowOverrite None <br>Require all granted <br>&lt;/Directory&gt;
+            </code>
+            <br>On a ensuite modifié le fichier /etc/apache2/sites-available/000-default.conf en modifiant la directive DocumentRoot comme suit :
+            <br><code>DocumentRoot /srv/compterendu.fr</code>
+            <br>Nous avons enfin redémarré Apache2 pour qu’il puisse appliquer toutes ces modifications via la commande suivante :
+            <br><code>sudo systemctl reload apache2.service</code>
+            <br>On peut désormais vérifier en tapant l’IP de la machine virtuelle sur un navigateur. On peut connaître l’adresse IP de la machine via la commande suivante :
+            <br><code>ip -c addr</code>
+        </p>
+        <h2>Configuration de WebStorm pour le déploiement</h2>
+        <p>
+            Nous allons utiliser l’outil de déploiement directement intégré à WebStorm pour déployer les fichiers sur le serveur web que nous venons de configurer à chaque modification.
+            <img src="assets/screens/deployment-1.png" alt="Accès à la configuration de la fonction deployment sur WebStorm">
+        </p>
+    </main>
 </div>
 <footer class="row">
     <h3>A propos</h3>

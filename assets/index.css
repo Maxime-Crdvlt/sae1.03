@@ -21,7 +21,7 @@ aside.nav {
     margin: 0.2em;
     align-self: start;
     position: sticky;
-    top: 3.80rem;
+    top: 74.5px;
 }
 nav.navbar {
     border-bottom-left-radius: 1.5em;
@@ -51,12 +51,17 @@ h1 {
     color: #F9F7F0;
     border-top-left-radius: 0.5em;
     border-bottom-left-radius: 0.5em;
+    padding: 0.25em;
 }
 h2 {
     background-color: #18B7BE;
     color: #072A40;
     border-top-left-radius: 0.5em;
     border-bottom-left-radius: 0.5em;
+    padding: 0.25em;
+}
+h3, h4 {
+    padding: 0.25em;
 }
 /* Main - Articles */
 
