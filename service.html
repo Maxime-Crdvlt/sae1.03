@@ -47,19 +47,18 @@
         <h3>Sommaire</h3>
         <ul class="navbar-nav align-items-center">
             <li class="nav-item">
-                <a class="nav-link" href="#mission">Notre mission</a>
+                <a class="nav-link" href="#apache">Configuration d’Apache</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#equipe">Notre équipe</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#sommaire">Sommaire du document</a>
+                <a class="nav-link" href="#webstorm">Configuration de WebStorm</a>
             </li>
         </ul>
     </aside>
     <main class="col px-0">
         <h1>Installation d'un poste pour le développement - Mise en place d'un service web</h1>
+        <article id="apache">
         <h2>Installation et configuration d’Apache</h2>
+
         <h3>Pourquoi Apache ?</h3>
         <p>
             Nous avons fait quelques recherches et voici pourquoi il serait plus judicieux selon nous d’utiliser Apache2 que Nginx par exemple :
@@ -90,6 +89,7 @@
             <br><code>ip -c addr</code>
             <br>Afin que toutes ces étapes fonctionnent, nous avons dû configurer le réseau de notre machine virtuelle sur : <code>“Mode d’accès réseaux : Accès par pont”</code>
         </p>
+
         <h3>Configuration d'Apache</h3>
         <p>
             Tout d’abord, nous allons créer un dossier qui contiendra tous les fichiers du site : compterendu.fr dans lequel nous créons dès à présent un fichier en .html de “test” qui affiche uniquement une phrase.
@@ -110,6 +110,8 @@
             <br>On peut désormais vérifier en tapant l’IP de la machine virtuelle sur un navigateur. On peut connaître l’adresse IP de la machine via la commande suivante :
             <br><code>ip -c addr</code>
         </p>
+        </article>
+        <article id="webstorm">
         <h2>Configuration de WebStorm pour le déploiement</h2>
         <p>
             Nous allons utiliser l’outil de déploiement directement intégré à WebStorm pour déployer les fichiers sur le serveur web que nous venons de configurer à chaque modification.
@@ -131,6 +133,7 @@
         <p>
             Nous voilà ensuite avec WebStorm configuré pour déployer les fichiers sur notre serveur web.
         </p>
+        </article>
     </main>
 </div>
 <footer class="row">
