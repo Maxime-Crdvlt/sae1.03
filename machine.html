@@ -65,10 +65,8 @@
         <p>
             VirtualBox a été recommandé, car c’est un outil libre, gratuit et multi-plateforme.
             Il est facile à configurer, idéal pour des environnements d'apprentissage
-            et compatible avec des distributions Linux.
-            son utilisation permet une
-            prise en main rapide tout en offrant des fonctionnalités avancées
-            comme la gestion des snapshots et des réseaux virtuels.
+            et compatible avec des distributions Linux. Son utilisation permet une
+            prise en main rapide tout en offrant des fonctionnalités avancées.
         </p>
         <h3>II. Type de virtualisation</h3>
         <p>
@@ -82,7 +80,7 @@
         <p>
             Le choix d’une distribution comme Debian est pertinent pour sa stabilité
             et parce que nous avions déjà des bases vu en cours.
-            Ces distributions sont bien supportées, avec de nombreux
+            Cette distribution est bien supportées, avec de nombreux
             packages précompilés pour des serveurs web tels qu'Apache ou Nginx
         </p>
         <h3>IV. Configuration de la VM</h3>
@@ -103,52 +101,52 @@
         <p>
             Nous nous sommes d’abord mis en super-utilisateur dans le terminal via la
             commande :
-        <code>su root</code><br /><br />
-        Nous avons ensuite créé l’utilisateur admin_Gr106_TrinomeG1 via la commande :
-        <code>sudo adduser admin_gr106_trinomeg1</code><br /><br />
-        
-            Le terminal nous demandera ensuite le mot de passe du super-utilisateur root
+            <br><code>su root</code>
+            <br>
+            <br>Nous avons ensuite créé l’utilisateur admin_Gr106_TrinomeG1 via la commande :
+            <br><code>sudo adduser admin_gr106_trinomeg1</code>
+            <br>Le terminal nous demandera ensuite le mot de passe du super-utilisateur root
             et nous demandera plusieurs informations concernant le nouvel utilisateur
             comme son mot de passe ou son nom.
-        
-        
-            Nous avons ensuite ajouté ce nouvel utilisateur dans le groupe sudo afin qu’il ait
+            <br>
+            <br>Nous avons ensuite ajouté ce nouvel utilisateur dans le groupe sudo afin qu’il ait
             les droits d’un super-utilisateur via la commande :
-        
-        <code>sudo usermod -aG sudo admin_gr106_trinomeg1</code><br /><br />
-        
-            Avec cette commande l’utilisateur “admin_gr106_trinomeg1” “devient” ainsi
+            <br><code>sudo usermod -aG sudo admin_gr106_trinomeg1</code>
+            <br>Avec cette commande l’utilisateur “admin_gr106_trinomeg1” “devient” ainsi
             un super-utilisateur puisqu’il est désormais dans le groupe sudo qui confère
             les droits aux utilisateurs de ce groupe d’administrer le système.
-            Nous avons à présent un compte administrateur de ma machine virtuelle autre
+            <br>
+            <br>Nous avons à présent un compte administrateur de ma machine virtuelle autre
             que le root.
         </p>
         <h3>Autres comptes</h3>
         <p>
             Nous avons ensuite créé plusieurs utilisateurs via la commande suivante en étant
             bien connecté avec notre compte administrateur créé plus tôt :
-            <code>sudo adduser trinomeg1_1</code><br><br>
+            <br><code>sudo adduser trinomeg1_1</code>
+            <br>Encore une fois ça nous a ensuite demandé le mot de passe du nouvel utilisateur et que nous avons
+            renseigné :
+            <br><code>TrinomeG1_1</code>
 
-            Encore une fois ça nous a ensuite demandé le mot de passe du nouvel utilisateur et que nous avons
-            renseigné : <code>TrinomeG1_1</code><br><br>
-
-            Nous avons répété cette étape deux fois afin de créer 3 utilisateurs : <code>
+            <br>Nous avons répété cette étape deux fois afin de créer 3 utilisateurs :
+            <code>
                 TrinomeG1_1
                 TrinomeG1_2
                 TrinomeG1_3
-            </code> <br><br>
-            Nous avons ensuite créé un groupe via la commande suivante :
-            <code>sudo groupadd TrinomeG1</code><br /><br />
-            Nous avons ensuite ajouté 2 des 3 utilisateurs dans le groupe via la commande
+            </code>
+            <br>
+            <br>Nous avons ensuite créé un groupe via la commande suivante :
+            <br><code>sudo groupadd TrinomeG1</code>
+            <br>Nous avons ensuite ajouté 2 des 3 utilisateurs dans le groupe via la commande
             suivante :
-            <code>
+            <br><code>
                 sudo usermod -aG TrinomeG1 trinomeg1_1
-                sudo usermod -aG TrinomeG1 trinomeg1_2
-            </code><br><br>
+                <br>sudo usermod -aG TrinomeG1 trinomeg1_2
+            </code>
         </p>
         </article>
         <article>
-            <h2>Personnalisation d'un invite de commande (prompt)</h2>
+            <h2>Personnalisation d'une invite de commande (prompt)</h2>
             <p>
                 Nous avons personnalisé le prompt grâce que fichier .bashrc
             </p>
