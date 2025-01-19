@@ -48,37 +48,44 @@
         <h3>Sommaire</h3>
         <ul class="navbar-nav align-items-center">
             <li class="nav-item">
-                <a class="nav-link" href="#mission">Notre mission</a>
+                <a class="nav-link" href="#definition">Définition</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#equipe">Notre équipe</a>
+                <a class="nav-link" href="#comparaisons">Comparaisons</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#sommaire">Sommaire du document</a>
+                <a class="nav-link" href="#types">Types de virtualisation</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#sauvegarde">Sauvegardes</a>
             </li>
         </ul>
     </aside>
 
     <main class="col">
         <h1>Installation d'un poste pour le développement - C'est quoi la virtualisation ?</h1>
-        <article>
+
+        <article id="definition">
         <h2>Définition de la virtualisation</h2>
-        <p>La virtualisation consiste à exécuter sur une machine hôte dans un environnement isolé, des systèmes d'exploitation.</p>
+        <p>La virtualisation consiste à exécuter sur une machine hôte dans un environnement isolé, des systèmes d'exploitation. La virtualisation peut aussi être utiliser pour créer des représentations virtuelles de serveurs, de stockage, de réseaux et d'autres machines physiques. Le logiciel virtuel imite les fonctions du matériel physique pour exécuter plusieurs machines virtuelles sur une seule machine physique.</p>
         </article>
-        <article>
+
+        <article id="comparaisons">
             <h2>Différence entre émulateur, simulateur et outil de virtualisation</h2>
-            <p>La simulation, en général, est une représentation fictive de la réalité. Il s’agit d’imiter une situation.
-                Un peu plus ambitieuse que la simulation, l’émulation permet non pas de modéliser, mais bel et bien de reproduire à l’identique le comportement d’un logiciel et son architecture matérielle.
-                La virtualisation, en général, signifie rendre virtuel c’est-à-dire qui n’existe pas. </p>
+            <p>L’émulateur reproduit exactement un système (matériel et/ou logiciel) sur un autre. Il recrée tous les aspects du système original, y compris l'architecture (Exemple : Émulateur de console de jeu).
+                Le simulateur lui reproduit le comportement ou les résultats d’un système, mais sans en copier tous les détails techniques. Il est utilisé pour tester ou entraîner (Exemple : Simulateur de vol).
+                Quant à l’outil de virtualisation, il crée des machines virtuelles indépendantes qui partagent les ressources physiques d'une machine hôte. Chaque machine virtuelle peut exécuter son propre système d’exploitation (Exemple : VMware, VirtualBox)</p>
         </article>
-        <article>
+
+        <article id="types">
             <h2>Type de virtualisation pour les environnements</h2>
             <h3>VirtualBox : </h3>
             </p>La virtualisation imbriquée dans VirtualBox est désactivée par défaut. Elle s'active VM par VM, ce qui est logique d'un sens. L'objectif va être d'exposer les fonctions de virtualisation, notamment l'Intel VT-x ou l'AMD-V selon votre type de processeur, directement au sein de la machine virtuelle. </p>
             <h3>VmWare : </h3>
             <p>VMware virtualise les ordinateurs physiques à l’aide de son produit principal, l’hyperviseur. Ce dernier est une fine couche de logiciel qui interagit avec les ressources sous-jacentes d'un ordinateur physique (appelé hôte) et alloue ces ressources à d'autres systèmes d'exploitation (appelés invités). </p>
         </article>
-        <article>
+
+        <article id="sauvegarde">
             <h2>Forme/lieu de sauvegarde de la machine virtuelle créée</h2>
             <h3>Méthode 1 : agent de sauvegarde local installé sur chaque machine virtuelle</h3>
             <p>Dans cette approche traditionnelle, un agent logiciel de sauvegarde est installé dans la machine virtuelle comme sur un serveur physique. Les données circulent vers l'infrastructure de sauvegarde/récupération, via le LAN, de la même manière que ce qui se passe si l'agent est installé sur un serveur physique. </p>
