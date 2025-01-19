@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ff76079f-2de9-403a-a99e-954493de5129" name="sae1.03">
+        <fileTransfer rootFolder="/home/admin_gr106_trinomeg1/compterendu.fr" accessType="SFTP" host="192.168.1.34" port="22" sshConfigId="2c5a7a03-1d4d-4785-adb5-d3dd222e65ab" sshConfig="admin_gr106_trinomeg1@192.168.1.34:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
